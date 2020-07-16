@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, Route } from "wouter";
-import ListOfGifs from './components/ListOfGifs'
 import  Home from "./pages/Home";
 import  SearchResults  from "./pages/SearchResults";
+import Detail from './pages/Detail'
 
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
         />
         <Route
           path="/search/:keyword"
-          component={ListOfGifs}
+          component={SearchResults}
         />
         <Route
-          component={SearchResults}
+          component={Detail}
           path={'/gif/:id'}
         />
       </section>
