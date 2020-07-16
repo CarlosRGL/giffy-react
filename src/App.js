@@ -3,8 +3,8 @@ import ListOfGif from './components/ListOfGifs'
 
 function App() {
   return (
-    <div className="App">
-      <section className="App-content">
+    <div className="App bg-gray-200">
+      <section className="container mx-auto flex flex-col">
         <ListOfGif keyword="rick" />
       </section>
     </div>
