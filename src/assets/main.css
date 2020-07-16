@@ -14342,6 +14342,17 @@ video {
   transition-delay: 1000ms;
 }
 
+.masonry {
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
 h1 {
   font-size: 1.5rem;
 }

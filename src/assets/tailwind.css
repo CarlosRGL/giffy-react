@@ -3,6 +3,17 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.masonry {
+  column-count: 2;
+  column-gap: 2rem;
+}
+@screen lg {
+  .masonry {
+    column-count: 3;
+  }
+}
+
 h1 {
   @apply text-2xl;
 }
