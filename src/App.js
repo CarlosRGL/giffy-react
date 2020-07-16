@@ -1,28 +1,19 @@
-import React, {useEffect, useState} from 'react';
-import getGifs from './services/getGifs';
-import Gif from './components/Gif';
+import React, { useEffect, useState } from 'react'
+import getGifs from './services/getGifs'
+import ListOfGif from './components/ListOfGifs'
 
 function App() {
-  const [gif, setGif] = useState([])
+  const [gifs, setGif] = useState([])
   useEffect(function () {
-    getGifs().then(gifs => setGif(gifs))
+    getGifs().then((gifs) => setGif(gifs))
   }, [])
   return (
     <div className="App">
       <section className="App-content">
-        {
-          gif.map(({id, title, url}) =>
-            <Gif
-              key = {id}
-              title={title}
-              url={url}
-              id={id}
-            />
-          )
-        }
+        <ListOfGif gifs={gifs} />
       </section>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
