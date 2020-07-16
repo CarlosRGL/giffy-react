@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import getGifs from '../services/getGifs'
 import Gif from './Gif'
 
-export default function ListOfGifs ({gifs}) {
-    return gifs.map(({ id, title, url }) => (
-      <Gif id={id} key={id} title={title} url={url} />
-    ))
+export default function ListOfGifs({ keyword }) {
+  const [gifs, setGif] = useState([])
+
+  useEffect(
+    function () {
+      getGifs({ keyword }).then((gifs) => setGif(gifs))
+    },
+    [keyword]
+  )
+
+  return gifs.map(({ id, title, url }) => (
+    <Gif id={id} key={id} title={title} url={url} />
+  ))
 }
