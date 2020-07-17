@@ -8,7 +8,7 @@ export default function getGifs({ keyword = 'rick' } = {}) {
       const { data } = response
       const gifs = data.map((image) => {
         const { images, title, id } = image
-        const { url } = images.downsized_medium
+        const { url } = images.original
         return { title, id, url }
       })
       return gifs

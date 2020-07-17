@@ -14344,13 +14344,20 @@ video {
 
 .masonry {
   column-count: 2;
-  column-gap: 2rem;
+  column-gap: 1rem;
+  break-inside: avoid-column;
 }
 
 @media (min-width: 1024px) {
   .masonry {
     column-count: 3;
   }
+}
+
+.no-break {
+  overflow: hidden; /* fix for Firefox */
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
 }
 
 h1 {
